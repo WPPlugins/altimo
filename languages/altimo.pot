@@ -1,0 +1,1497 @@
+# Copyright (C) 2026 Creative Skyline Ltda.
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Altimo – AI Image SEO 3.0.0\n"
+"Report-Msgid-Bugs-To: https://imageaiseo.com\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-26T01:12:31+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: altimo\n"
+
+#. Plugin Name of the plugin
+#: altimo.php
+#: includes/class-plugin.php:287
+msgid "Altimo – AI Image SEO"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: altimo.php
+msgid "https://imageaiseo.com"
+msgstr ""
+
+#. Description of the plugin
+#: altimo.php
+msgid "AI-written titles, alt texts, descriptions and file names for your images, in 28 languages."
+msgstr ""
+
+#. Author of the plugin
+#: altimo.php
+msgid "Creative Skyline Ltda."
+msgstr ""
+
+#. Author URI of the plugin
+#: altimo.php
+msgid "https://profiles.wordpress.org/creativeskyline/"
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-guard.php:112
+msgid "You do not have permission to edit this image."
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-history.php:33
+#: includes/admin/ajax/class-ajax-history.php:122
+#: includes/admin/ajax/class-ajax-history.php:167
+#: includes/admin/ajax/class-ajax-history.php:212
+#: includes/admin/ajax/class-ajax-history.php:261
+#: includes/admin/ajax/class-ajax-optimize.php:86
+#: includes/admin/ajax/class-ajax-optimize.php:208
+#: includes/admin/ajax/class-ajax-optimize.php:348
+#: includes/admin/ajax/class-ajax-optimize.php:468
+#: includes/admin/ajax/class-ajax-site-profile.php:42
+#: includes/admin/ajax/class-ajax-statistics.php:29
+#: includes/admin/class-admin-notices.php:107
+#: includes/class-settings-handler.php:31
+#: includes/class-settings-handler.php:101
+#: includes/class-settings-handler.php:214
+#: includes/class-settings-handler.php:275
+#: includes/class-settings-handler.php:318
+msgid "No permission."
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-history.php:132
+#: includes/admin/ajax/class-ajax-history.php:177
+msgid "Invalid history ID."
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-history.php:222
+msgid "Invalid attachment ID."
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-history.php:271
+#: includes/admin/class-admin-assets.php:160
+msgid "No items selected."
+msgstr ""
+
+#. translators: 1: history entry ID, 2: error message
+#: includes/admin/ajax/class-ajax-history.php:297
+#, php-format
+msgid "ID %1$d: %2$s"
+msgstr ""
+
+#. translators: %d: number of changes reverted
+#: includes/admin/ajax/class-ajax-history.php:309
+#, php-format
+msgid "%d change reverted successfully."
+msgid_plural "%d changes reverted successfully."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of successful reverts, 2: number of failures
+#: includes/admin/ajax/class-ajax-history.php:320
+#, php-format
+msgid "%1$d reverted, %2$d failed."
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-metadata.php:33
+#: includes/admin/ajax/class-ajax-optimize.php:135
+#: includes/admin/ajax/class-ajax-optimize.php:660
+#: includes/admin/ajax/class-ajax-optimize.php:693
+#: includes/admin/ajax/class-ajax-optimize.php:982
+msgid "You do not have permission to do this."
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-metadata.php:83
+msgid "Changes saved successfully."
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-optimize.php:96
+#: includes/admin/class-admin-assets.php:82
+#: includes/class-api-validator.php:17
+msgid "Please enter an API key."
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-optimize.php:113
+#: includes/admin/class-admin-assets.php:83
+#: includes/admin/class-admin-assets.php:421
+#: includes/class-api-validator.php:60
+#: includes/class-image-optimizer.php:109
+#: includes/class-site-profile.php:286
+msgid "Connection error. Please try again later."
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-optimize.php:220
+#: includes/admin/ajax/class-ajax-optimize.php:360
+msgid "Invalid image ID."
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-optimize.php:297
+msgid "Suggestion ready. Review the changes before applying them."
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-optimize.php:372
+msgid "The preview suggestion has expired. Please reopen the preview to generate a new one."
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-optimize.php:419
+msgid "Image successfully optimized!"
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-optimize.php:482
+msgid "The file is not an image."
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-optimize.php:546
+#: includes/class-image-optimizer.php:222
+msgid "Failed to rename file. Changes have been rolled back."
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-optimize.php:636
+msgid "The bulk optimization was stopped: the data-processing notice has changed and needs your consent again. Please review it on the License tab, then resume the run. No credits were used for the remaining images."
+msgstr ""
+
+#: includes/admin/ajax/class-ajax-optimize.php:639
+msgid "The bulk optimization was stopped: data-processing consent has not been granted. Please grant consent on the License tab, then resume the run. No credits were used for the remaining images."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:80
+#: includes/admin/class-admin-assets.php:417
+msgid "Changes saved!"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:81
+msgid "Error saving."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:84
+#: includes/class-settings-handler.php:86
+#: includes/class-settings-handler.php:122
+msgid "Settings saved successfully."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:85
+msgid "Error saving settings."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:86
+#: includes/admin/class-admin-assets.php:419
+#: includes/admin/views/dashboard-header.php:40
+msgid "Remaining credits"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:87
+#: includes/admin/class-admin-assets.php:422
+msgid "Optimizing..."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:88
+#: includes/admin/views/tab-bulk-optimization.php:59
+msgid "Start Bulk Optimization"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:89
+#: includes/admin/views/tab-bulk-optimization.php:55
+msgid "All images optimized"
+msgstr ""
+
+#. translators: 1: number of images to optimize, 2: number of credits that will be used (same as %1$d), 3: number of credits currently available. Replaced client-side.
+#. translators: 1: number of images to optimize, 2: number of credits that will be used (same as %1$d), 3: number of credits currently available
+#: includes/admin/class-admin-assets.php:91
+#: includes/admin/views/tab-bulk-optimization.php:39
+#, php-format
+msgid "Optimizing %1$d images will use %2$d credits. You have %3$d credits."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:92
+#: includes/admin/views/tab-bulk-optimization.php:48
+msgid "Warning: Not enough credits for all images!"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:93
+msgid "No images to optimize."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:94
+msgid "Error during bulk optimization."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:95
+msgid "All images have been optimized successfully!"
+msgstr ""
+
+#. translators: %d: current image number, %total: total number of images in the run (replaced client-side, not via sprintf).
+#: includes/admin/class-admin-assets.php:97
+#, php-format
+msgid "Optimizing image %d of %total"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:99
+msgid "Resuming interrupted run…"
+msgstr ""
+
+#. translators: %d: number of images still pending, %total: total number of images in the run.
+#: includes/admin/class-admin-assets.php:105
+#, php-format
+msgid "Interrupted run found: %d of %total images still pending. Resume?"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:106
+msgid "Resume run"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:107
+msgid "Discard run"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:108
+msgid "The interrupted run was discarded. No further credits were used."
+msgstr ""
+
+#. translators: %total: number of selected images, %remaining: number of available credits.
+#: includes/admin/class-admin-assets.php:114
+msgid "You selected %total images, but only have %remaining credits. Optimize as many as your credits allow?"
+msgstr ""
+
+#. translators: %remaining: number of images that can be optimized with the available credits.
+#: includes/admin/class-admin-assets.php:116
+msgid "Optimize the first %remaining"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:117
+msgid "Cancel"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:120
+#: includes/admin/class-admin-assets.php:433
+msgid "You have no credits remaining. Purchase more to continue optimizing your images."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:121
+#: includes/admin/class-admin-assets.php:436
+#: includes/admin/class-admin-notices.php:379
+#: includes/admin/views/dashboard-header.php:59
+msgid "Buy more credits"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:124
+msgid "These images need your attention:"
+msgstr ""
+
+#. translators: %d: attachment ID of the image that was retired from the run.
+#: includes/admin/class-admin-assets.php:126
+#, php-format
+msgid "Image #%d could not be processed even after multiple attempts."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:127
+msgid "Notices for this run:"
+msgstr ""
+
+#. translators: %1$d: attachment ID of the image that was skipped; %2$s: reason why it needs attention.
+#: includes/admin/class-admin-assets.php:136
+#, php-format
+msgid "Image #%1$d was skipped and needs your attention: %2$s"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:138
+#: includes/admin/views/tab-history.php:26
+msgid "AI Optimization"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:139
+#: includes/admin/views/tab-history.php:27
+msgid "Manual Edit"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:140
+#: includes/admin/class-admin-assets.php:149
+#: includes/admin/class-media-columns.php:77
+#: includes/admin/views/tab-history.php:28
+#: includes/admin/views/tab-history.php:38
+msgid "Reverted"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:141
+#: includes/admin/views/tab-history.php:29
+msgid "Restored"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:142
+#: includes/admin/views/tab-history.php:30
+msgid "Regenerated"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:143
+#: includes/admin/class-media-columns.php:199
+#: includes/admin/views/preview-dialog.php:51
+#: includes/admin/views/preview-dialog.php:53
+msgid "Title"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:144
+#: includes/admin/class-media-columns.php:201
+#: includes/admin/views/preview-dialog.php:59
+#: includes/admin/views/preview-dialog.php:61
+msgid "Alt-Text"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:145
+#: includes/admin/class-media-columns.php:203
+#: includes/admin/views/preview-dialog.php:81
+#: includes/admin/views/preview-dialog.php:83
+msgid "Filename"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:146
+msgid "Revert"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:147
+msgid "Restore"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:148
+msgid "Regenerate"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:150
+msgid "Processing..."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:151
+msgid "Are you sure you want to revert this change?"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:152
+msgid "Are you sure you want to restore this change?"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:153
+#: includes/admin/class-admin-assets.php:427
+msgid "Are you sure you want to regenerate this image? This will use 1 credit."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:155
+#: includes/admin/views/tab-history.php:50
+msgid "selected"
+msgstr ""
+
+#. translators: %d: number of selected history entries to revert.
+#: includes/admin/class-admin-assets.php:157
+#, php-format
+msgid "Are you sure you want to revert %d selected changes?"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:158
+msgid "Successfully reverted."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:159
+msgid "Error during batch revert."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:162
+msgid "Insufficient credits. Please purchase more credits to continue."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:163
+msgid "Invalid API key. Please check your license settings."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:164
+msgid "Network timeout. Please check your connection and try again."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:165
+msgid "Invalid image file. The file may be corrupted or unsupported."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:166
+msgid "A file with this name already exists. Please choose a different name."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:167
+msgid "Image not found. It may have been deleted."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:168
+msgid "An unexpected error occurred. Please try again."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:170
+msgid "Activity data, last 7 days"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:171
+msgid "Day"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:172
+msgid "Optimizations"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:174
+msgid "Select this history entry"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:176
+#: includes/class-api-client.php:65
+msgid "Please accept the data-processing notice before using this feature."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:177
+#: includes/admin/class-admin-notices.php:323
+msgid "Go to License Tab"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:178
+#: includes/class-settings-handler.php:285
+msgid "Please tick the consent checkbox first."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:179
+#: includes/admin/views/tab-license.php:131
+msgid "Revoke consent"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:181
+msgid "AI is analysing your site…"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:182
+msgid "Suggestions inserted. Review them and click \"Save Settings\" to keep them."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:183
+msgid "The fields already contain text. Replace it with AI suggestions?"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:184
+msgid "Replace with suggestions"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:185
+msgid "Keep my text"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:418
+msgid "Error saving!"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:420
+msgid "Error during optimization. Please try again."
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:423
+#: includes/admin/class-media-columns.php:241
+#: includes/admin/class-media-columns.php:463
+msgid "Optimize with AI"
+msgstr ""
+
+#: includes/admin/class-admin-assets.php:424
+msgid "Optimized!"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:22
+#: includes/admin/class-admin-menu.php:23
+#: includes/admin/class-network-admin-menu.php:35
+#: includes/admin/views/dashboard-header.php:19
+msgid "Altimo"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:52
+msgid "Arabic"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:53
+msgid "Chinese"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:54
+msgid "Czech"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:55
+msgid "Danish"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:56
+msgid "Dutch"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:57
+msgid "English"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:58
+msgid "Finnish"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:59
+msgid "French"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:60
+msgid "German"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:61
+msgid "Greek"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:62
+msgid "Hebrew"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:63
+msgid "Hindi"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:64
+msgid "Hungarian"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:65
+msgid "Indonesian"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:66
+msgid "Italian"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:67
+msgid "Japanese"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:68
+msgid "Korean"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:69
+msgid "Norwegian"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:70
+msgid "Polish"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:71
+msgid "Portuguese"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:72
+msgid "Romanian"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:73
+msgid "Russian"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:74
+msgid "Spanish"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:75
+msgid "Swedish"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:76
+msgid "Thai"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:77
+msgid "Turkish"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:78
+msgid "Ukrainian"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:79
+msgid "Vietnamese"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:113
+msgid "Unknown notice."
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:226
+msgid "Altimo is almost ready!"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:227
+msgid "Activate your license to start optimizing your images with AI. New accounts get free starter credits."
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:231
+msgid "Activate Now"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:268
+msgid "Altimo: please confirm the updated data-processing notice"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:269
+msgid "The description of what is sent to the service has changed. Optimization and AI suggestions are paused until you have read the updated notice and given your consent again on the License tab. Your API key, settings and history are kept."
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:273
+msgid "Review notice"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:318
+msgid "Auto-optimization is paused"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:319
+msgid "Auto-optimize is enabled, but images uploaded right now are being skipped because data-processing consent has not been granted yet. Grant consent on the License tab to resume."
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:374
+msgid "Auto-optimization is paused: no credits left"
+msgstr ""
+
+#: includes/admin/class-admin-notices.php:375
+msgid "Auto-optimize is enabled, but newly uploaded images are being skipped because your credit balance has reached zero. Buy more credits to resume optimizing your uploads automatically."
+msgstr ""
+
+#: includes/admin/class-media-columns.php:76
+msgid "Needs attention"
+msgstr ""
+
+#: includes/admin/class-media-columns.php:78
+msgid "Waiting for background run"
+msgstr ""
+
+#: includes/admin/class-media-columns.php:79
+#: includes/admin/views/tab-bulk-optimization.php:23
+#: includes/admin/views/tab-statistics.php:35
+msgid "Optimized"
+msgstr ""
+
+#: includes/admin/class-media-columns.php:80
+msgid "Not optimized"
+msgstr ""
+
+#: includes/admin/class-media-columns.php:91
+msgid "Optimization Status"
+msgstr ""
+
+#: includes/admin/class-media-columns.php:92
+msgid "Quick Edit"
+msgstr ""
+
+#: includes/admin/class-media-columns.php:206
+#: includes/admin/views/preview-dialog.php:67
+#: includes/admin/views/preview-dialog.php:69
+msgid "Description"
+msgstr ""
+
+#: includes/admin/class-media-columns.php:208
+msgid "Save"
+msgstr ""
+
+#: includes/admin/class-media-columns.php:209
+msgid "Optimize"
+msgstr ""
+
+#: includes/admin/class-media-columns.php:228
+msgid "Already optimized"
+msgstr ""
+
+#: includes/admin/class-media-columns.php:246
+msgid "AI SEO"
+msgstr ""
+
+#: includes/admin/class-media-columns.php:249
+msgid "Optimize title, alt-text and filename using AI"
+msgstr ""
+
+#: includes/admin/class-media-columns.php:275
+#: includes/admin/views/tab-history.php:36
+msgid "All statuses"
+msgstr ""
+
+#: includes/admin/class-network-admin-menu.php:34
+msgid "Altimo Network Settings"
+msgstr ""
+
+#: includes/admin/class-network-admin-menu.php:49
+msgid "You do not have permission to access this page."
+msgstr ""
+
+#: includes/admin/class-network-admin-menu.php:74
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: includes/admin/views/dashboard-header.php:22
+msgid "Visit website"
+msgstr ""
+
+#: includes/admin/views/dashboard-header.php:28
+msgid "Altimo sections"
+msgstr ""
+
+#: includes/admin/views/dashboard-header.php:29
+msgid "Welcome"
+msgstr ""
+
+#: includes/admin/views/dashboard-header.php:30
+msgid "Statistics"
+msgstr ""
+
+#: includes/admin/views/dashboard-header.php:31
+msgid "Bulk optimization"
+msgstr ""
+
+#: includes/admin/views/dashboard-header.php:32
+msgid "History"
+msgstr ""
+
+#: includes/admin/views/dashboard-header.php:33
+#: includes/admin/views/tab-settings.php:16
+#: includes/class-plugin.php:302
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/views/dashboard-header.php:34
+msgid "License"
+msgstr ""
+
+#: includes/admin/views/dashboard-header.php:43
+msgid "(1 credit per optimization)"
+msgstr ""
+
+#: includes/admin/views/dashboard-header.php:52
+msgid "Low credits!"
+msgstr ""
+
+#: includes/admin/views/dashboard-header.php:55
+msgid "No credits remaining!"
+msgstr ""
+
+#: includes/admin/views/network-settings.php:15
+msgid "Altimo: Network Settings"
+msgstr ""
+
+#: includes/admin/views/network-settings.php:20
+msgid "Network API key saved."
+msgstr ""
+
+#: includes/admin/views/network-settings.php:25
+msgid "Set an API key here to share it across every site in this network. Individual sites may still set their own key, which then takes precedence on that site."
+msgstr ""
+
+#: includes/admin/views/network-settings.php:34
+msgid "Network API Key"
+msgstr ""
+
+#: includes/admin/views/network-settings.php:42
+#: includes/admin/views/tab-license.php:95
+msgid "Paste your API key here..."
+msgstr ""
+
+#: includes/admin/views/network-settings.php:44
+msgid "Leave unchanged to keep the currently saved key."
+msgstr ""
+
+#: includes/admin/views/network-settings.php:50
+msgid "Save Network Key"
+msgstr ""
+
+#: includes/admin/views/preview-dialog.php:30
+msgid "Review the AI suggestion"
+msgstr ""
+
+#: includes/admin/views/preview-dialog.php:34
+msgid "The credit for this suggestion was already used when it was generated. Discarding or closing this dialog does not refund it, but reopening the preview for this image shows the same suggestion again at no extra cost."
+msgstr ""
+
+#: includes/admin/views/preview-dialog.php:88
+msgid "Current:"
+msgstr ""
+
+#: includes/admin/views/preview-dialog.php:91
+msgid "Suggested:"
+msgstr ""
+
+#: includes/admin/views/preview-dialog.php:95
+msgid "When you apply the new filename the image file is renamed. Anyone (visitors and search engines) requesting the old URL is automatically forwarded to the new one with a permanent HTTP 301 redirect, so existing links keep working."
+msgstr ""
+
+#: includes/admin/views/preview-dialog.php:107
+msgid "Request a new suggestion"
+msgstr ""
+
+#: includes/admin/views/preview-dialog.php:111
+msgid "Requesting a new suggestion will use 1 credit."
+msgstr ""
+
+#: includes/admin/views/preview-dialog.php:117
+msgid "Discard"
+msgstr ""
+
+#: includes/admin/views/preview-dialog.php:120
+msgid "Apply selected fields"
+msgstr ""
+
+#: includes/admin/views/tab-bulk-optimization.php:15
+msgid "Bulk Optimization"
+msgstr ""
+
+#: includes/admin/views/tab-bulk-optimization.php:19
+#: includes/admin/views/tab-statistics.php:28
+msgid "Total Images"
+msgstr ""
+
+#: includes/admin/views/tab-bulk-optimization.php:27
+msgid "Not Optimized"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:12
+msgid "Optimization History"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:13
+msgid "View all image optimizations and revert changes if needed."
+msgstr ""
+
+#: includes/admin/views/tab-history.php:19
+msgid "Search"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:20
+msgid "Search by filename..."
+msgstr ""
+
+#: includes/admin/views/tab-history.php:23
+#: includes/admin/views/tab-history.php:66
+msgid "Type"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:25
+msgid "All types"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:34
+msgid "Status"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:37
+msgid "Active"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:42
+msgid "Apply"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:43
+msgid "Reset"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:51
+msgid "Revert Selected"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:52
+msgid "Clear Selection"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:58
+msgid "Loading history..."
+msgstr ""
+
+#: includes/admin/views/tab-history.php:63
+msgid "Select all"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:64
+msgid "Image"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:65
+msgid "Changes"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:67
+msgid "Date"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:68
+msgid "Actions"
+msgstr ""
+
+#: includes/admin/views/tab-history.php:75
+msgid "No optimization history found."
+msgstr ""
+
+#: includes/admin/views/tab-history.php:79
+msgid "Load more"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:36
+msgid "Activate Altimo"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:37
+msgid "Unlock the full power of AI-driven image optimization for your WordPress site."
+msgstr ""
+
+#: includes/admin/views/tab-license.php:44
+msgid "Free starter credits"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:45
+msgid "Start optimizing immediately after registration"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:51
+msgid "AI-Powered Optimization"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:52
+msgid "Smart titles, alt texts & filenames"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:58
+msgid "Improve Your SEO"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:59
+msgid "Better rankings through optimized images"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:65
+msgid "Don't have an API key yet?"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:66
+msgid "Create a free account and get free starter credits to try Altimo. No credit card required!"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:68
+msgid "Get Your Free API Key"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:74
+msgid "Already have an API key?"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:82
+msgid "License Active"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:83
+msgid "Your Altimo license is activated and ready to use."
+msgstr ""
+
+#: includes/admin/views/tab-license.php:88
+msgid "Enter Your API Key"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:98
+msgid "Validate & Save"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:106
+msgid "The data-processing notice has changed."
+msgstr ""
+
+#: includes/admin/views/tab-license.php:107
+msgid "Please read the updated notice below, tick the checkbox and click \"Validate & Save\" to continue optimizing images and using AI suggestions. Your saved API key is kept."
+msgstr ""
+
+#: includes/admin/views/tab-license.php:112
+msgid "Consent is required before images can be optimized. Tick the checkbox and click \"Validate & Save\". Your saved API key is kept."
+msgstr ""
+
+#: includes/admin/views/tab-license.php:123
+msgid "What exactly is transmitted?"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:137
+msgid "Provided by your network administrator."
+msgstr ""
+
+#: includes/admin/views/tab-license.php:145
+msgid "Need more credits?"
+msgstr ""
+
+#: includes/admin/views/tab-license.php:146
+msgid "Purchase additional credits"
+msgstr ""
+
+#: includes/admin/views/tab-settings.php:20
+msgid "General Settings"
+msgstr ""
+
+#: includes/admin/views/tab-settings.php:26
+msgid "Automatically optimize images on upload"
+msgstr ""
+
+#: includes/admin/views/tab-settings.php:31
+msgid "Language Settings"
+msgstr ""
+
+#: includes/admin/views/tab-settings.php:45
+msgid "AI Output Language"
+msgstr ""
+
+#: includes/admin/views/tab-settings.php:51
+#: includes/admin/views/tab-welcome.php:99
+msgid "Save Settings"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:13
+msgid "Statistics Dashboard"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:14
+msgid "Overview of your image optimization activity."
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:18
+msgid "Loading statistics..."
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:42
+msgid "Unoptimized"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:49
+msgid "Optimization Rate"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:56
+msgid "Optimization Progress"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:68
+msgid "Credit Usage"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:72
+msgid "Remaining"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:76
+msgid "Used Today"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:80
+msgid "This Month"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:84
+msgid "Total Used"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:91
+msgid "Activity (Last 7 Days)"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:99
+msgid "Action Breakdown"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:102
+msgid "AI Optimizations"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:106
+msgid "Manual Edits"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:110
+msgid "Regenerations"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:114
+msgid "Reverts"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:118
+msgid "Restores"
+msgstr ""
+
+#: includes/admin/views/tab-statistics.php:127
+msgid "Refresh Statistics"
+msgstr ""
+
+#: includes/admin/views/tab-welcome.php:18
+msgid "Welcome to Altimo"
+msgstr ""
+
+#: includes/admin/views/tab-welcome.php:19
+msgid "Please provide your main focus keyword and a brief description of your website to help optimize your images."
+msgstr ""
+
+#: includes/admin/views/tab-welcome.php:25
+msgid "Let the AI suggest these fields from your site name, tagline, address, language and the titles of your recent posts, pages and products."
+msgstr ""
+
+#: includes/admin/views/tab-welcome.php:29
+msgid "Suggest with AI"
+msgstr ""
+
+#. translators: 1: opening link tag to the License tab, 2: closing link tag
+#: includes/admin/views/tab-welcome.php:36
+#, php-format
+msgid "To use AI suggestions, enter your API key and accept the data-processing notice on the %1$sLicense tab%2$s."
+msgstr ""
+
+#: includes/admin/views/tab-welcome.php:54
+msgid "Main Focus Keyword"
+msgstr ""
+
+#: includes/admin/views/tab-welcome.php:61
+msgid "Enter your main keyword"
+msgstr ""
+
+#: includes/admin/views/tab-welcome.php:69
+msgid "Additional Keywords"
+msgstr ""
+
+#: includes/admin/views/tab-welcome.php:76
+msgid "Enter additional keywords (optional)"
+msgstr ""
+
+#: includes/admin/views/tab-welcome.php:84
+msgid "Website Description"
+msgstr ""
+
+#: includes/admin/views/tab-welcome.php:90
+msgid "Enter a brief description of your website"
+msgstr ""
+
+#: includes/class-api-client.php:82
+msgid "You have no credits remaining. Please purchase more to continue."
+msgstr ""
+
+#: includes/class-api-validator.php:70
+#: includes/class-image-optimizer.php:119
+#: includes/class-site-profile.php:296
+#: includes/class-site-profile.php:316
+msgid "Invalid response from server."
+msgstr ""
+
+#: includes/class-api-validator.php:81
+msgid "API key successfully validated!"
+msgstr ""
+
+#: includes/class-api-validator.php:90
+msgid "API key could not be validated."
+msgstr ""
+
+#: includes/class-consent-disclosure.php:87
+msgid "Image URL"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:88
+msgid "Focus keyword"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:89
+msgid "Additional keywords"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:90
+msgid "Website description"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:91
+msgid "Language"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:106
+msgid "Website domain"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:107
+msgid "Server IP address"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:108
+msgid "Plugin version"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:121
+msgid "Site name"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:122
+msgid "Site tagline"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:123
+msgid "Website address"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:124
+msgid "WordPress language (locale)"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:125
+msgid "Output language"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:126
+msgid "Whether WooCommerce is active"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:127
+msgid "Titles of up to 20 recently published posts, pages and products"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:138
+msgid "The service downloads the image from its URL, reduces its size and passes it to the AI model for analysis. Your API key is sent with every request, and WordPress includes your website address in the request header."
+msgstr ""
+
+#: includes/class-consent-disclosure.php:151
+msgid "Data is sent only when an image is optimized or regenerated (individually, in bulk, or automatically on upload if you enable auto-optimization), when you validate your API key, when the plugin checks your credit balance, and when AI suggestions for your Welcome settings are requested (once automatically right after you validate your API key or give this consent for an already saved key, and each time you click \"Suggest with AI\")."
+msgstr ""
+
+#. translators: 1: company name, 2: company address, 3: destination country, 4: privacy policy URL, 5: name of the AI gateway
+#: includes/class-consent-disclosure.php:172
+#, php-format
+msgid "The recipient of the transmitted data is %1$s, %2$s. The AI analysis runs through %5$s, an AI gateway operated by %1$s, which forwards the image and the text data to the AI model vendor named in the privacy policy. This transfers the data to %3$s and leaves the EU into a third country under GDPR Art. 44 ff. The transfer is based on the European Commission's adequacy decision for Brazil, with Standard Contractual Clauses (SCC) as an additional safeguard. See the recipient's privacy policy for full details, including the AI model vendor used: %4$s"
+msgstr ""
+
+#. translators: %d: number of days after which the request records are anonymised
+#: includes/class-consent-disclosure.php:194
+#, php-format
+msgid "The purpose of the processing is to generate SEO-optimized titles, alt texts, descriptions and filenames for your images, and to suggest a focus keyword, additional keywords and a website description for your site. The downloaded image is not stored. The service keeps a record of each image request (image URL, keywords, website description, language and the generated texts) and of your website (domain, server IP address, plugin version). After %d days, the personal details in these records are anonymised; only counters such as the number of requests, the language and the outcome remain."
+msgstr ""
+
+#: includes/class-consent-disclosure.php:215
+msgid "The site data sent for AI suggestions is used only to generate the suggestions and is not stored beyond technical logs."
+msgstr ""
+
+#: includes/class-consent-disclosure.php:227
+msgid "I agree that data will be transmitted to Creative Skyline Ltda. (Brazil) for image optimization and AI suggestions for my site settings."
+msgstr ""
+
+#: includes/class-consent-disclosure.php:247
+msgid "The following data is transmitted for every image optimization:"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:248
+msgid "Additionally, the following data is transmitted when validating your API key and when checking your credit balance:"
+msgstr ""
+
+#: includes/class-consent-disclosure.php:249
+msgid "When AI suggestions for your Welcome settings are requested, the following data is transmitted:"
+msgstr ""
+
+#: includes/class-file-handler.php:72
+msgid "No file could be determined for this image."
+msgstr ""
+
+#: includes/class-file-handler.php:83
+msgid "The new filename is empty or contains no allowed characters."
+msgstr ""
+
+#: includes/class-file-handler.php:198
+msgid "This image is hosted externally (offload/CDN) and cannot be renamed. Title, alt text, and description are still optimized."
+msgstr ""
+
+#: includes/class-file-handler.php:220
+msgid "The target directory is outside the uploads directory. The rename was aborted."
+msgstr ""
+
+#: includes/class-file-handler.php:233
+msgid "The image metadata contains a file path outside the uploads directory. The rename was aborted, nothing was changed."
+msgstr ""
+
+#. translators: %s: file name.
+#: includes/class-file-handler.php:347
+#, php-format
+msgid "The file \"%s\" is outside the uploads directory. The rename was aborted, nothing was changed."
+msgstr ""
+
+#. translators: %s: file name.
+#: includes/class-file-handler.php:358
+#, php-format
+msgid "The file \"%s\" no longer exists. The rename was aborted, nothing was changed."
+msgstr ""
+
+#. translators: %s: directory name.
+#: includes/class-file-handler.php:369
+#, php-format
+msgid "The directory \"%s\" is not writable. The rename was aborted, nothing was changed."
+msgstr ""
+
+#. translators: %s: file name.
+#: includes/class-file-handler.php:380
+#, php-format
+msgid "The target filename \"%s\" is already taken. The rename was aborted, nothing was changed."
+msgstr ""
+
+#: includes/class-file-handler.php:463
+#: includes/class-file-handler.php:473
+msgid "A file could not be renamed. All changes were rolled back."
+msgstr ""
+
+#: includes/class-file-handler.php:536
+#: includes/class-file-handler.php:545
+msgid "The references to the image could not be updated. All changes were rolled back."
+msgstr ""
+
+#. translators: 1: table name, 2: row identifier
+#: includes/class-file-handler.php:711
+#, php-format
+msgid "Already-corrupted serialized data was found in the database (table \"%1$s\", entry \"%2$s\"). The rename was aborted, nothing was changed. Please check this entry manually."
+msgstr ""
+
+#: includes/class-history-handler.php:536
+#: includes/class-history-handler.php:689
+msgid "History entry not found."
+msgstr ""
+
+#: includes/class-history-handler.php:544
+msgid "This change has already been reverted."
+msgstr ""
+
+#: includes/class-history-handler.php:554
+#: includes/class-history-handler.php:707
+msgid "The image no longer exists."
+msgstr ""
+
+#: includes/class-history-handler.php:603
+#: includes/class-history-handler.php:754
+msgid "Failed to rename file. Metadata changes have been rolled back."
+msgstr ""
+
+#: includes/class-history-handler.php:626
+msgid "The stored backup could not be read. References were not restored."
+msgstr ""
+
+#: includes/class-history-handler.php:671
+msgid "Changes successfully reverted."
+msgstr ""
+
+#: includes/class-history-handler.php:697
+msgid "This change has not been reverted and cannot be restored."
+msgstr ""
+
+#: includes/class-history-handler.php:790
+msgid "Changes successfully restored."
+msgstr ""
+
+#: includes/class-history-handler.php:805
+msgid "The image does not exist or is not a valid image."
+msgstr ""
+
+#: includes/class-history-handler.php:831
+msgid "Image successfully regenerated."
+msgstr ""
+
+#: includes/class-image-optimizer.php:30
+msgid "The selected file is not an image."
+msgstr ""
+
+#: includes/class-image-optimizer.php:40
+#: includes/class-site-profile.php:241
+msgid "No API key found. Please add an API key in the settings."
+msgstr ""
+
+#: includes/class-image-optimizer.php:49
+msgid "Image URL could not be determined."
+msgstr ""
+
+#: includes/class-image-optimizer.php:128
+msgid "Error during image optimization."
+msgstr ""
+
+#: includes/class-image-optimizer.php:140
+msgid "Image successfully optimized! Don't forget to save the changes."
+msgstr ""
+
+#: includes/class-image-optimizer.php:155
+msgid "Unexpected error during image optimization."
+msgstr ""
+
+#: includes/class-rename-guard.php:146
+msgid "This image is currently being renamed by another process."
+msgstr ""
+
+#: includes/class-settings-handler.php:75
+msgid "Invalid language selected."
+msgstr ""
+
+#: includes/class-settings-handler.php:148
+msgid "The main keyword must be less than 50 characters."
+msgstr ""
+
+#: includes/class-settings-handler.php:152
+msgid "The additional keywords must be less than 150 characters."
+msgstr ""
+
+#: includes/class-settings-handler.php:156
+msgid "The description must be less than 1000 characters."
+msgstr ""
+
+#: includes/class-settings-handler.php:226
+msgid "Please accept the data-processing notice to validate and save your API key."
+msgstr ""
+
+#: includes/class-settings-handler.php:299
+msgid "Consent saved. You can optimize images again."
+msgstr ""
+
+#: includes/class-settings-handler.php:327
+msgid "Consent revoked. New optimizations are now blocked."
+msgstr ""
+
+#: includes/class-site-profile.php:304
+msgid "The site analysis failed. Please try again later."
+msgstr ""
+
+#: includes/class-site-profile.php:325
+msgid "The AI did not return any suggestions. Please try again later."
+msgstr ""
+
+#: includes/class-site-profile.php:431
+msgid "AI suggestions were added to the empty fields and saved. You can change them at any time."
+msgstr ""
+
+#: includes/class-site-profile.php:444
+msgid "You have reached today's limit for site analysis. Please try again tomorrow."
+msgstr ""
+
+#: includes/class-variant-notice.php:196
+msgid "Altimo is paused until you deactivate Image AI SEO Pro. Do not delete Image AI SEO Pro on the Plugins screen, because that deletes the shared API key and settings; remove its folder by FTP instead."
+msgstr ""
+
+#: includes/class-variant-notice.php:197
+msgid "Image AI SEO Pro is discontinued and replaced by Altimo. Deactivate Image AI SEO Pro, but do not delete it on the Plugins screen, because that deletes the shared API key and settings; remove its folder by FTP instead."
+msgstr ""
+
+#. translators: %s: download URL of Image AI SEO 2.3.3
+#: includes/class-variant-notice.php:206
+#, php-format
+msgid "Altimo is paused until you deactivate the old Image AI SEO plugin. Do not delete it before you have updated it to version 2.3.3 (download at %s): older versions delete the shared API key and settings on uninstall."
+msgstr ""
+
+#. translators: %s: download URL of Image AI SEO 2.3.3
+#: includes/class-variant-notice.php:211
+#, php-format
+msgid "Image AI SEO is now Altimo. Deactivate the old Image AI SEO plugin, but do not delete it before you have updated it to version 2.3.3 (download at %s): older versions delete the shared API key and settings on uninstall."
+msgstr ""
+
+#: includes/class-variant-notice.php:217
+msgid "Altimo is paused until you deactivate the old Image AI SEO plugin. Then delete it; your API key and settings stay."
+msgstr ""
+
+#: includes/class-variant-notice.php:218
+msgid "Image AI SEO is now Altimo. Deactivate and delete the old Image AI SEO plugin; your API key and settings stay."
+msgstr ""
+
+#: includes/class-variant-notice.php:238
+msgid "Altimo is paused because another copy of Altimo is active. Deactivate and delete one of the two copies; your API key and settings stay."
+msgstr ""

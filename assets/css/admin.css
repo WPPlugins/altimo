@@ -1,0 +1,416 @@
+/*
+ * Altimo: Media Library, attachment edit screen and media modal.
+ *
+ * Loaded only on upload.php and the attachment edit screen. Every selector is
+ * scoped to a plugin-prefixed class or ID (.image-ai-seo-*, #image-ai-seo-*),
+ * and the keyframes carry the prefix as well, so no rule can reach core UI or
+ * another plugin's markup.
+ */
+
+.image-ai-seo-edit {
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.image-ai-seo-edit .edit-field {
+    margin-bottom: 10px;
+}
+
+.image-ai-seo-edit label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.image-ai-seo-edit input[type="text"],
+.image-ai-seo-edit textarea {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.image-ai-seo-edit textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.image-ai-seo-edit .filename-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.image-ai-seo-edit .filename-wrapper input {
+    flex: 1;
+}
+
+.image-ai-seo-edit .file-extension {
+    color: #666;
+    font-size: 13px;
+}
+
+.image-ai-seo-edit .button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.image-ai-seo-edit.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.image-ai-seo-edit.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: image-ai-seo-spin-centered 1s linear infinite;
+}
+
+@keyframes image-ai-seo-spin-centered {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.image-ai-seo-edit.saving {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.image-ai-seo-edit .success-message,
+.image-ai-seo-edit .error-message {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.image-ai-seo-edit .success-message {
+    background-color: #e7f5ea;
+    color: #0a5624;
+    border: 1px solid #c3e6cb;
+}
+
+.image-ai-seo-edit .error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.image-ai-seo-edit .button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* =====================
+   Attachment Field Styles (Media Modal & Edit Page)
+   ===================== */
+
+.image-ai-seo-attachment-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.image-ai-seo-attachment-field .spinner {
+    float: none;
+    margin: 0;
+}
+
+.image-ai-seo-attachment-field .optimization-status {
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+.image-ai-seo-attachment-field .optimization-status.success {
+    color: #00a32a;
+}
+
+.image-ai-seo-attachment-field .optimization-status.error {
+    color: #d63638;
+}
+
+/* =====================
+   Preview Dialog (PREV-01/PREV-02/D-01/D-02/D-04)
+   =====================
+
+   Minimal structural styling so the aria-modal preview overlay actually
+   behaves as a modal: rendered from the admin footer, it must sit above the
+   fixed WordPress admin menu, toolbar (z-index 99999) AND the wp.media modal
+   (z-index 160000, since the preview can be opened from the media modal's
+   compat fields) instead of flowing inline behind them, where those layers
+   would intercept clicks on the field checkboxes and the confirm button.
+   Visual polish is deferred to a later phase; this block only covers
+   positioning and operability. */
+
+.image-ai-seo-preview-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Respect the HTML5 hidden attribute: a display rule would otherwise override
+   it, so the dialog is only laid out as a flex overlay while it is shown. */
+.image-ai-seo-preview-overlay[hidden] {
+    display: none;
+}
+
+.image-ai-seo-preview-overlay .image-ai-seo-preview-dialog {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 960px;
+    max-height: 92vh;
+    overflow-y: auto;
+    padding: 28px 32px 24px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    font-size: 13px;
+}
+
+/* Modal Surface Contract (07.1 UI-SPEC), reworked in 2.1.1 for a roomy two-column
+   layout: the image on the left, the four fields at full width on the right. The
+   field toggles, notice copy and confirm/discard/regenerate wiring are untouched. */
+.image-ai-seo-preview-dialog .preview-dialog-header {
+    margin-bottom: 20px;
+}
+
+.image-ai-seo-preview-dialog .preview-dialog-title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0 0 12px;
+    padding: 0;
+}
+
+.image-ai-seo-preview-dialog .preview-spent-credit-notice {
+    margin: 0;
+    background: #fff8e5;
+    color: #684e00;
+    border: 1px solid #f0d68a;
+    border-radius: 4px;
+    padding: 10px 14px;
+    line-height: 1.5;
+}
+
+.image-ai-seo-preview-dialog .preview-dialog-body {
+    display: grid;
+    grid-template-columns: minmax(200px, 280px) minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.image-ai-seo-preview-dialog .preview-image {
+    margin: 0;
+    position: sticky;
+    top: 0;
+}
+
+.image-ai-seo-preview-dialog .preview-image-thumb {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: contain;
+    background: #f6f7f7;
+    border: 1px solid #dcdcde;
+    border-radius: 6px;
+}
+
+.image-ai-seo-preview-dialog .preview-image-caption {
+    margin-top: 8px;
+    color: #50575e;
+    word-break: break-all;
+}
+
+.image-ai-seo-preview-dialog .preview-image-caption code {
+    background: none;
+    padding: 0;
+    font-size: 12px;
+}
+
+.image-ai-seo-preview-dialog .preview-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+}
+
+.image-ai-seo-preview-dialog .preview-field {
+    margin: 0;
+}
+
+.image-ai-seo-preview-dialog .preview-field-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 6px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #1d2327;
+    cursor: pointer;
+}
+
+.image-ai-seo-preview-dialog .preview-field-label input[type="checkbox"] {
+    margin: 0;
+}
+
+.image-ai-seo-preview-dialog .preview-input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.image-ai-seo-preview-dialog textarea.preview-input {
+    min-height: 104px;
+    resize: vertical;
+}
+
+/* An unticked field stays readable but is visibly not going to be applied. */
+.image-ai-seo-preview-dialog .preview-field:has(.preview-field-toggle:not(:checked)) .preview-input {
+    opacity: 0.55;
+}
+
+.image-ai-seo-preview-dialog .preview-rename-notice {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 10px 0 0;
+    background: #f6f7f7;
+    padding: 12px 14px;
+    border-radius: 4px;
+    line-height: 1.5;
+    color: #50575e;
+}
+
+.image-ai-seo-preview-dialog .preview-rename-change code {
+    word-break: break-all;
+}
+
+.image-ai-seo-preview-dialog .preview-dialog-messages:not(:empty) {
+    margin-top: 16px;
+}
+
+.image-ai-seo-preview-dialog .preview-dialog-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.image-ai-seo-preview-dialog .preview-dialog-regenerate {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.image-ai-seo-preview-dialog .preview-regenerate-warning {
+    color: #646970;
+}
+
+.image-ai-seo-preview-dialog .preview-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-left: auto;
+}
+
+@media (max-width: 782px) {
+    .image-ai-seo-preview-overlay .image-ai-seo-preview-dialog {
+        padding: 20px;
+    }
+
+    .image-ai-seo-preview-dialog .preview-dialog-body {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .image-ai-seo-preview-dialog .preview-image {
+        position: static;
+    }
+
+    .image-ai-seo-preview-dialog .preview-image-thumb {
+        max-height: 220px;
+    }
+}
+
+/* Explicit accent focus ring on the dialog's interactive elements. :focus-visible
+   keeps the ring off mouse clicks while guaranteeing a keyboard-visible outline. */
+#image-ai-seo-preview-dialog *:focus-visible {
+    outline: 2px solid #2271b1;
+    outline-offset: 2px;
+}
+
+/* =====================
+   Media Library status badges (07.1 UI-SPEC Media Library Consistency Contract)
+   Mirrors the History tab's .action-type pill pattern so the Media Library,
+   History and Dashboard read as one system. class-media-columns.php emits five
+   states; each maps to a distinct, color-coded badge.
+   ===================== */
+.image-ai-seo-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.image-ai-seo-status-optimized {
+    background: #e7f5ea;
+    color: #0a5624;
+}
+
+.image-ai-seo-status-not_optimized {
+    background: #f0f0f1;
+    color: #50575e;
+}
+
+.image-ai-seo-status-needs_attention {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.image-ai-seo-status-waiting {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* reverted -> info/neutral, reusing .reverted-badge's existing treatment from
+   admin-dashboard.css (do not invent a new color) per the UI-SPEC. */
+.image-ai-seo-status-reverted {
+    background: #f8d7da;
+    color: #721c24;
+}

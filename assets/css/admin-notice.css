@@ -1,0 +1,47 @@
+.image-ai-seo-activation-notice {
+	border-left-color: #2271b1;
+	padding: 0;
+	margin: 15px 0;
+}
+.image-ai-seo-notice-content {
+	display: flex;
+	align-items: center;
+	padding: 12px 15px;
+	gap: 15px;
+}
+.image-ai-seo-notice-content .notice-icon {
+	background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+	border-radius: 8px;
+	padding: 10px;
+	flex-shrink: 0;
+}
+.image-ai-seo-notice-content .notice-icon .dashicons {
+	color: #fff;
+	font-size: 24px;
+	width: 24px;
+	height: 24px;
+}
+.image-ai-seo-notice-content .notice-text {
+	flex: 1;
+}
+.image-ai-seo-notice-content .notice-text strong {
+	font-size: 14px;
+	color: #1d2327;
+}
+.image-ai-seo-notice-content .notice-text p {
+	margin: 4px 0 0;
+	color: #50575e;
+}
+.image-ai-seo-notice-content .notice-actions {
+	flex-shrink: 0;
+}
+.image-ai-seo-notice-content .button-primary {
+	background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+	border: none;
+	padding: 8px 20px;
+	height: auto;
+	font-weight: 500;
+}
+.image-ai-seo-notice-content .button-primary:hover {
+	background: linear-gradient(135deg, #135e96 0%, #0a4b78 100%);
+}

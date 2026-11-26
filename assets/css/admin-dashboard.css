@@ -1,0 +1,1450 @@
+/*
+ * Altimo: the plugin's own admin page (toplevel_page_altimo).
+ *
+ * Every rule is scoped to the page wrapper <div class="wrap image-ai-seo-dashboard">
+ * (includes/admin/class-admin-menu.php), so nothing here can reach core UI or
+ * another plugin's markup, including the overrides of core classes such as
+ * .nav-tab, .nav-tab-wrapper, .button-hero, .tab-content and .spinner. The
+ * scope is written as :where(.image-ai-seo-dashboard), which adds no
+ * specificity: each rule keeps exactly the weight it had against the core
+ * admin styles, so the page looks the same as before the scoping. New rules
+ * must use the same prefix. The keyframes carry the plugin prefix as well.
+ */
+
+.image-ai-seo-dashboard {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* The History, Statistics and Bulk-optimization tabs need far more horizontal
+   room than the reading-width forms the 800px cap is tuned for (diff tables,
+   charts and batch rows). Widen the shell only while one of those data-dense
+   tabs is active so the reading-width tabs (Welcome/Settings/License) keep
+   their intended measure. Selector-driven so no JS change is required to keep
+   the two in sync. */
+.image-ai-seo-dashboard:has(#history.active, #statistics.active, #bulk-optimization.active) {
+    max-width: 1200px;
+}
+
+:where(.image-ai-seo-dashboard) .image-ai-seo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+:where(.image-ai-seo-dashboard) .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+:where(.image-ai-seo-dashboard) .logo-section .logo {
+    width: 40px;
+    height: 40px;
+}
+
+:where(.image-ai-seo-dashboard) .logo-section h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+:where(.image-ai-seo-dashboard) .visit-website {
+    text-decoration: none;
+    color: #2271b1;
+    font-size: 14px;
+}
+
+:where(.image-ai-seo-dashboard) .nav-tab-wrapper {
+    border-bottom: 1px solid #c3c4c7;
+    padding: 0 20px;
+    margin: 0;
+    text-align: center;
+}
+
+:where(.image-ai-seo-dashboard) .nav-tab {
+    font-size: 14px;
+    padding: 10px 15px;
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+:where(.image-ai-seo-dashboard) .credits-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: #f0f6fc;
+}
+
+:where(.image-ai-seo-dashboard) .remaining-credits {
+    font-size: 14px;
+    color: #1d2327;
+    background: #ffd24c;
+    padding: 5px 15px;
+    border-radius: 4px;
+}
+
+:where(.image-ai-seo-dashboard) .image-ai-seo-content {
+    padding: 0;
+}
+
+:where(.image-ai-seo-dashboard) .welcome-section {
+    padding: 30px;
+    text-align: center;
+}
+
+:where(.image-ai-seo-dashboard) .welcome-section h2 {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+:where(.image-ai-seo-dashboard) .welcome-section p {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* =====================
+   License Page Styles
+   ===================== */
+
+:where(.image-ai-seo-dashboard) .license-section {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+:where(.image-ai-seo-dashboard) .license-hero {
+    margin-bottom: 30px;
+}
+
+:where(.image-ai-seo-dashboard) .license-hero h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1d2327;
+    margin: 15px 0 10px;
+}
+
+:where(.image-ai-seo-dashboard) .license-hero-subtitle {
+    font-size: 16px;
+    color: #646970;
+    margin: 0;
+}
+
+:where(.image-ai-seo-dashboard) .license-hero-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+:where(.image-ai-seo-dashboard) .license-hero-icon .dashicons {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    color: #fff;
+}
+
+:where(.image-ai-seo-dashboard) .license-hero-icon-active {
+    background: linear-gradient(135deg, #00a32a 0%, #007017 100%);
+}
+
+:where(.image-ai-seo-dashboard) .license-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+    text-align: left;
+    background: #f0f6fc;
+    padding: 20px 25px;
+    border-radius: 8px;
+    border: 1px solid #c3c4c7;
+}
+
+:where(.image-ai-seo-dashboard) .license-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+:where(.image-ai-seo-dashboard) .license-feature .dashicons {
+    color: #00a32a;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+:where(.image-ai-seo-dashboard) .license-feature div {
+    display: flex;
+    flex-direction: column;
+}
+
+:where(.image-ai-seo-dashboard) .license-feature strong {
+    color: #1d2327;
+    font-size: 14px;
+}
+
+:where(.image-ai-seo-dashboard) .license-feature span {
+    color: #646970;
+    font-size: 13px;
+}
+
+:where(.image-ai-seo-dashboard) .license-cta-box {
+    background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+:where(.image-ai-seo-dashboard) .license-cta-box h3 {
+    color: #fff;
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+:where(.image-ai-seo-dashboard) .license-cta-box p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 20px;
+    font-size: 14px;
+}
+
+:where(.image-ai-seo-dashboard) .button-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff !important;
+    color: #2271b1 !important;
+    border: none !important;
+    padding: 12px 28px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    height: auto !important;
+    line-height: 1.4 !important;
+    transition: all 0.2s ease !important;
+}
+
+:where(.image-ai-seo-dashboard) .button-hero:hover {
+    background: #f0f6fc !important;
+    transform: translateY(-1px);
+}
+
+:where(.image-ai-seo-dashboard) .button-hero .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+:where(.image-ai-seo-dashboard) .license-divider {
+    position: relative;
+    margin: 30px 0;
+}
+
+:where(.image-ai-seo-dashboard) .license-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #c3c4c7;
+}
+
+:where(.image-ai-seo-dashboard) .license-divider span {
+    position: relative;
+    background: #fff;
+    padding: 0 15px;
+    color: #646970;
+    font-size: 13px;
+}
+
+:where(.image-ai-seo-dashboard) .api-key-section {
+    margin: 20px auto;
+    padding: 25px;
+    background: #f6f7f7;
+    border-radius: 8px;
+    max-width: 600px;
+}
+
+:where(.image-ai-seo-dashboard) .api-key-section.api-key-active {
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+}
+
+:where(.image-ai-seo-dashboard) .api-key-section h3 {
+    margin-top: 0;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1d2327;
+}
+
+:where(.image-ai-seo-dashboard) .api-key-input-wrapper {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+:where(.image-ai-seo-dashboard) .api-key-input {
+    flex: 1;
+    min-width: 250px;
+    padding: 12px 15px !important;
+    font-size: 14px !important;
+    border: 2px solid #c3c4c7 !important;
+    border-radius: 6px !important;
+    transition: border-color 0.2s ease;
+}
+
+:where(.image-ai-seo-dashboard) .api-key-input:focus {
+    border-color: #2271b1 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 1px #2271b1 !important;
+}
+
+:where(.image-ai-seo-dashboard) .api-key-section .validate-key {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px !important;
+    height: auto !important;
+    font-size: 14px !important;
+}
+
+:where(.image-ai-seo-dashboard) .api-key-section .validate-key .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    /* Core gives button dashicons a taller line box and a top offset, which
+       pushed the check mark below the label's optical centre. */
+    line-height: 16px;
+    margin: 0;
+    vertical-align: middle;
+}
+
+:where(.image-ai-seo-dashboard) .validation-status {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+:where(.image-ai-seo-dashboard) .validation-status.success {
+    color: #00a32a;
+}
+
+:where(.image-ai-seo-dashboard) .validation-status.error {
+    color: #d63638;
+}
+
+:where(.image-ai-seo-dashboard) .license-info-box {
+    margin-top: 25px;
+    padding: 15px 20px;
+    background: #f0f6fc;
+    border-radius: 6px;
+    border: 1px solid #c3c4c7;
+}
+
+:where(.image-ai-seo-dashboard) .license-info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+}
+
+:where(.image-ai-seo-dashboard) .license-info-item .dashicons {
+    color: #2271b1;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+:where(.image-ai-seo-dashboard) .license-info-item strong {
+    display: block;
+    font-size: 13px;
+    color: #1d2327;
+}
+
+:where(.image-ai-seo-dashboard) .license-info-item a {
+    font-size: 13px;
+    text-decoration: none;
+}
+
+:where(.image-ai-seo-dashboard) .license-info-item a:hover {
+    text-decoration: underline;
+}
+
+/* Tab Content Styles */
+:where(.image-ai-seo-dashboard) .tab-content {
+    display: none;
+    padding: 30px;
+}
+
+:where(.image-ai-seo-dashboard) .tab-content.active {
+    display: block;
+}
+
+/* Bulk Optimization Styles */
+:where(.image-ai-seo-dashboard) .bulk-optimization-section {
+    text-align: center;
+}
+
+:where(.image-ai-seo-dashboard) .bulk-actions {
+    margin: 20px 0;
+}
+
+/* Settings Styles */
+:where(.image-ai-seo-dashboard) .settings-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+:where(.image-ai-seo-dashboard) .setting-group {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f6f7f7;
+    border-radius: 4px;
+}
+
+:where(.image-ai-seo-dashboard) .setting-group h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+:where(.image-ai-seo-dashboard) .setting-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+:where(.image-ai-seo-dashboard) .setting-group select {
+    min-width: 200px;
+}
+
+:where(.image-ai-seo-dashboard) .setting-actions {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+:where(.image-ai-seo-dashboard) .settings-status {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+:where(.image-ai-seo-dashboard) .settings-status.success {
+    color: #00a32a;
+}
+
+:where(.image-ai-seo-dashboard) .settings-status.error {
+    color: #d63638;
+}
+
+:where(.image-ai-seo-dashboard) .input-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+:where(.image-ai-seo-dashboard) .input-wrapper input[type="text"],
+:where(.image-ai-seo-dashboard) .input-wrapper textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+:where(.image-ai-seo-dashboard) .input-wrapper textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+:where(.image-ai-seo-dashboard) .char-counter {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    font-size: 12px;
+    color: #666;
+}
+
+:where(.image-ai-seo-dashboard) .char-counter.limit-reached {
+    color: #d63638;
+}
+
+:where(.image-ai-seo-dashboard) .keyword-section {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #f6f7f7;
+    border-radius: 4px;
+}
+
+:where(.image-ai-seo-dashboard) .keyword-section h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+:where(.image-ai-seo-dashboard) .keyword-section .input-group {
+    margin-bottom: 25px;
+}
+
+/* 2.2.0: AI suggestion of the Welcome settings, at the top of the keyword box. */
+:where(.image-ai-seo-dashboard) .image-ai-seo-site-profile {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dcdcde;
+    text-align: center;
+}
+
+:where(.image-ai-seo-dashboard) .image-ai-seo-site-profile .image-ai-seo-site-profile-intro {
+    margin: 0 auto 12px;
+    color: #50575e;
+}
+
+:where(.image-ai-seo-dashboard) .image-ai-seo-site-profile .suggest-site-profile {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+:where(.image-ai-seo-dashboard) .image-ai-seo-site-profile .suggest-site-profile .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    margin: 0;
+}
+
+:where(.image-ai-seo-dashboard) .image-ai-seo-site-profile .image-ai-seo-site-profile-hint {
+    margin: 10px auto 0;
+}
+
+:where(.image-ai-seo-dashboard) .image-ai-seo-site-profile .image-ai-seo-site-profile-hint[hidden] {
+    display: none;
+}
+
+:where(.image-ai-seo-dashboard) .image-ai-seo-site-profile-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+:where(.image-ai-seo-dashboard) .image-ai-seo-site-profile-status:empty {
+    display: none;
+}
+
+:where(.image-ai-seo-dashboard) .image-ai-seo-site-profile-status .spinner {
+    float: none;
+    margin: 0;
+}
+
+:where(.image-ai-seo-dashboard) .image-ai-seo-site-profile-status.success {
+    color: #00a32a;
+}
+
+:where(.image-ai-seo-dashboard) .image-ai-seo-site-profile-status.error {
+    color: #d63638;
+}
+
+:where(.image-ai-seo-dashboard) .image-ai-seo-site-profile-prompt {
+    max-width: 600px;
+    margin: 12px auto 0;
+    text-align: left;
+}
+
+:where(.image-ai-seo-dashboard) .image-ai-seo-site-profile-prompt-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+:where(.image-ai-seo-dashboard) .keyword-section[aria-busy="true"] .input-wrapper input[type="text"],
+:where(.image-ai-seo-dashboard) .keyword-section[aria-busy="true"] .input-wrapper textarea {
+    background: #f6f7f7;
+    color: #646970;
+}
+
+/* Wrapper for the bar and the "Optimizing image X of Y" line. The line sits
+   below the bar: the bar clips its content (20px, overflow: hidden). */
+:where(.image-ai-seo-dashboard) .optimization-progress-wrap {
+    margin: 20px 0;
+}
+
+:where(.image-ai-seo-dashboard) .optimization-progress {
+    background: #f0f0f1;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 20px;
+}
+
+:where(.image-ai-seo-dashboard) .progress-bar {
+    height: 100%;
+    background: #2271b1;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+:where(.image-ai-seo-dashboard) .progress-text {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #50575e;
+}
+
+:where(.image-ai-seo-dashboard) .bulk-success-message,
+:where(.image-ai-seo-dashboard) .bulk-error-message {
+    margin: 15px 0;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+:where(.image-ai-seo-dashboard) .bulk-success-message {
+    background-color: #e7f5ea;
+    color: #0a5624;
+    border: 1px solid #c3e6cb;
+}
+
+:where(.image-ai-seo-dashboard) .bulk-error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* D-13/D-14: nicht-fatale Hinweise eines Bulk-Laufs (z. B. uebersprungene Umbenennung
+   bei ausgelagerten Medien). Bewusst in Warnfarbe statt Rot -- die Optimierung war
+   erfolgreich, nur eine Teilfunktion wurde uebersprungen. */
+:where(.image-ai-seo-dashboard) .bulk-notice-message {
+    margin: 15px 0;
+    padding: 10px 15px;
+    border-radius: 4px;
+    background-color: #fff8e5;
+    color: #684e00;
+    border: 1px solid #f0d68a;
+}
+
+:where(.image-ai-seo-dashboard) .bulk-notice-message ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+    list-style: disc;
+}
+
+/* Rueckfrage vor dem Fortsetzen eines unterbrochenen Laufs. Ein fortgesetztes Bild
+   kostet einen Credit, deshalb wird gefragt statt einfach weitergemacht. */
+:where(.image-ai-seo-dashboard) .bulk-resume-prompt {
+    margin: 15px 0;
+    padding: 10px 15px;
+}
+
+:where(.image-ai-seo-dashboard) .bulk-resume-prompt .bulk-resume-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 0;
+}
+
+/* Laufbegleitende Statuszeile. Bewusst ausserhalb von .optimization-progress, das
+   20px hoch mit overflow:hidden ist -- sonst waere der Text nicht sichtbar. */
+:where(.image-ai-seo-dashboard) .bulk-run-status {
+    margin: 15px 0 5px;
+    font-size: 13px;
+    color: #50575e;
+}
+
+/* Bilder, die nach MAX_ATTEMPTS ausgemustert wurden und manuell geprueft werden
+   muessen. Rot statt Warnfarbe: hier ist nichts uebersprungen worden, hier ist etwas
+   endgueltig gescheitert. */
+:where(.image-ai-seo-dashboard) .bulk-attention-message {
+    margin: 15px 0;
+    padding: 10px 15px;
+    border-radius: 4px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+:where(.image-ai-seo-dashboard) .bulk-attention-message ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+    list-style: disc;
+}
+
+/* =====================
+   History Styles
+   ===================== */
+
+:where(.image-ai-seo-dashboard) .history-section {
+    max-width: 100%;
+}
+
+:where(.image-ai-seo-dashboard) .history-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+:where(.image-ai-seo-dashboard) .history-section > p {
+    color: #646970;
+    margin-bottom: 20px;
+}
+
+:where(.image-ai-seo-dashboard) .history-list-container {
+    margin-top: 20px;
+    /* The dashboard wrapper is capped at 800px while the history table's fixed
+       columns already claim ~570px. Without horizontal scrolling the flexible
+       changes column collapses to a few pixels and wraps one character per line. */
+    overflow-x: auto;
+}
+
+:where(.image-ai-seo-dashboard) .history-loading {
+    text-align: center;
+    padding: 40px;
+    color: #646970;
+}
+
+:where(.image-ai-seo-dashboard) .history-loading .spinner {
+    float: none;
+    margin-right: 10px;
+}
+
+:where(.image-ai-seo-dashboard) .history-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* The fixed columns already claim ~670px inside an 800px-capped wrapper,
+       which starved the flexible changes column down to a few pixels. A table
+       floor lets .history-list-container scroll instead of collapsing it.
+       min-width on the cells themselves is ignored by the auto table layout. */
+    min-width: 900px;
+}
+
+:where(.image-ai-seo-dashboard) .history-table th {
+    text-align: left;
+    padding: 12px 10px;
+    font-weight: 600;
+    border-bottom: 2px solid #c3c4c7;
+}
+
+:where(.image-ai-seo-dashboard) .history-table td {
+    padding: 12px 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+:where(.image-ai-seo-dashboard) .history-table .column-thumbnail {
+    width: 80px;
+}
+
+:where(.image-ai-seo-dashboard) .history-table .column-type {
+    width: 120px;
+}
+
+:where(.image-ai-seo-dashboard) .history-table .column-date {
+    width: 150px;
+}
+
+:where(.image-ai-seo-dashboard) .history-table .column-actions {
+    width: 180px;
+}
+
+/* Keep the diff readable: it is the only flexible column, so it needs a floor
+   the fixed columns cannot squeeze it below. */
+:where(.image-ai-seo-dashboard) .history-table .column-changes {
+    min-width: 280px;
+}
+
+:where(.image-ai-seo-dashboard) .history-thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+:where(.image-ai-seo-dashboard) .history-thumbnail-placeholder {
+    width: 60px;
+    height: 60px;
+    background: #f0f0f1;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 24px;
+}
+
+:where(.image-ai-seo-dashboard) .history-changes {
+    font-size: 13px;
+    /* Filenames and slugs have no natural break opportunities; allow breaking
+       inside them rather than letting them force the column wider. */
+    overflow-wrap: anywhere;
+}
+
+:where(.image-ai-seo-dashboard) .change-item {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+:where(.image-ai-seo-dashboard) .change-item:last-child {
+    margin-bottom: 0;
+}
+
+:where(.image-ai-seo-dashboard) .change-item .old-value {
+    color: #d63638;
+    text-decoration: line-through;
+    background: #fef1f1;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+:where(.image-ai-seo-dashboard) .change-item .new-value {
+    color: #00a32a;
+    background: #e7f5ea;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+:where(.image-ai-seo-dashboard) .action-type {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+:where(.image-ai-seo-dashboard) .action-optimize {
+    background: #e7f5ea;
+    color: #0a5624;
+}
+
+:where(.image-ai-seo-dashboard) .action-manual {
+    background: #f0f6fc;
+    color: #2271b1;
+}
+
+:where(.image-ai-seo-dashboard) .action-revert {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+:where(.image-ai-seo-dashboard) .action-restore {
+    background: #fff3cd;
+    color: #856404;
+}
+
+:where(.image-ai-seo-dashboard) .action-regenerate {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+:where(.image-ai-seo-dashboard) .reverted-badge {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 2px 6px;
+    background: #f8d7da;
+    color: #721c24;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+:where(.image-ai-seo-dashboard) .history-item.status-reverted {
+    background: #fef9f9;
+}
+
+:where(.image-ai-seo-dashboard) .history-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+:where(.image-ai-seo-dashboard) .history-actions .button {
+    width: 100%;
+    text-align: center;
+}
+
+:where(.image-ai-seo-dashboard) .revert-btn {
+    background: #f8d7da !important;
+    border-color: #f5c6cb !important;
+    color: #721c24 !important;
+}
+
+:where(.image-ai-seo-dashboard) .revert-btn:hover {
+    background: #f5c6cb !important;
+}
+
+:where(.image-ai-seo-dashboard) .restore-btn {
+    background: #fff3cd !important;
+    border-color: #ffc107 !important;
+    color: #856404 !important;
+}
+
+:where(.image-ai-seo-dashboard) .restore-btn:hover {
+    background: #ffc107 !important;
+}
+
+:where(.image-ai-seo-dashboard) .regenerate-btn {
+    background: #d1ecf1 !important;
+    border-color: #bee5eb !important;
+    color: #0c5460 !important;
+}
+
+:where(.image-ai-seo-dashboard) .regenerate-btn:hover {
+    background: #bee5eb !important;
+}
+
+:where(.image-ai-seo-dashboard) .history-empty {
+    text-align: center;
+    padding: 40px;
+    color: #646970;
+    background: #f6f7f7;
+    border-radius: 4px;
+}
+
+:where(.image-ai-seo-dashboard) .history-pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+:where(.image-ai-seo-dashboard) .history-message {
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+:where(.image-ai-seo-dashboard) .history-success-message {
+    background-color: #e7f5ea;
+    color: #0a5624;
+    border: 1px solid #c3e6cb;
+}
+
+:where(.image-ai-seo-dashboard) .history-error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+:where(.image-ai-seo-dashboard) .api-key-hint {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #646970;
+    text-align: center;
+}
+
+:where(.image-ai-seo-dashboard) .api-key-hint a {
+    color: #2271b1;
+}
+
+/* =====================
+   Credits Info Styles
+   ===================== */
+
+:where(.image-ai-seo-dashboard) .credit-cost-info {
+    font-size: 12px;
+    color: #646970;
+}
+
+:where(.image-ai-seo-dashboard) .credit-warning {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #fff3cd;
+    color: #856404;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+:where(.image-ai-seo-dashboard) .credit-warning.critical {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* The display above would otherwise override the hidden attribute of the inactive badge. */
+:where(.image-ai-seo-dashboard) .credit-warning[hidden] {
+    display: none;
+}
+
+:where(.image-ai-seo-dashboard) .bulk-credit-info {
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    background: #f0f6fc;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #1d2327;
+}
+
+:where(.image-ai-seo-dashboard) .credit-insufficient {
+    color: #d63638;
+    font-weight: 500;
+}
+
+/* =====================
+   History Filters
+   ===================== */
+
+:where(.image-ai-seo-dashboard) .history-filters {
+    background: #f6f7f7;
+    padding: 15px 20px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+:where(.image-ai-seo-dashboard) .filter-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+:where(.image-ai-seo-dashboard) .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+:where(.image-ai-seo-dashboard) .filter-group.filter-search {
+    flex: 1;
+    min-width: 200px;
+}
+
+:where(.image-ai-seo-dashboard) .filter-group label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #646970;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+:where(.image-ai-seo-dashboard) .filter-group input[type="text"] {
+    width: 100%;
+    padding: 7px 12px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+:where(.image-ai-seo-dashboard) .filter-group select {
+    min-width: 130px;
+    padding: 7px 10px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+:where(.image-ai-seo-dashboard) .filter-actions {
+    flex-direction: row !important;
+    gap: 8px !important;
+    margin-left: auto;
+}
+
+:where(.image-ai-seo-dashboard) .filter-actions .button {
+    padding: 6px 12px;
+    height: auto;
+    line-height: 1.4;
+}
+
+/* =====================
+   Batch Actions
+   ===================== */
+
+:where(.image-ai-seo-dashboard) .batch-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f0f6fc;
+    border: 1px solid #2271b1;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+:where(.image-ai-seo-dashboard) .batch-actions .selected-count {
+    font-weight: 500;
+    color: #2271b1;
+}
+
+:where(.image-ai-seo-dashboard) .batch-revert-btn {
+    background: #f8d7da !important;
+    border-color: #f5c6cb !important;
+    color: #721c24 !important;
+}
+
+:where(.image-ai-seo-dashboard) .batch-revert-btn:hover {
+    background: #f5c6cb !important;
+}
+
+/* History table checkbox column */
+:where(.image-ai-seo-dashboard) .history-table .column-checkbox {
+    width: 40px;
+    text-align: center;
+}
+
+:where(.image-ai-seo-dashboard) .history-table .column-checkbox input[type="checkbox"] {
+    margin: 0;
+}
+
+:where(.image-ai-seo-dashboard) .history-item-checkbox:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* =====================
+   Responsive Adjustments
+   ===================== */
+
+@media screen and (max-width: 782px) {
+    :where(.image-ai-seo-dashboard) .filter-row {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    :where(.image-ai-seo-dashboard) .filter-group,
+    :where(.image-ai-seo-dashboard) .filter-group.filter-search {
+        flex: none;
+        width: 100%;
+    }
+
+    :where(.image-ai-seo-dashboard) .filter-group input[type="text"],
+    :where(.image-ai-seo-dashboard) .filter-group select {
+        width: 100%;
+        min-width: auto;
+    }
+
+    :where(.image-ai-seo-dashboard) .filter-actions {
+        margin-left: 0;
+        justify-content: flex-start;
+    }
+
+    :where(.image-ai-seo-dashboard) .batch-actions {
+        flex-wrap: wrap;
+    }
+
+    :where(.image-ai-seo-dashboard) .credits-info {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    :where(.image-ai-seo-dashboard) .stats-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    :where(.image-ai-seo-dashboard) .stats-grid-small {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    :where(.image-ai-seo-dashboard) .activity-chart {
+        height: 150px !important;
+    }
+}
+
+/* =====================
+   Statistics Dashboard
+   ===================== */
+
+:where(.image-ai-seo-dashboard) .statistics-section {
+    max-width: 100%;
+}
+
+:where(.image-ai-seo-dashboard) .statistics-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+:where(.image-ai-seo-dashboard) .statistics-section > p {
+    color: #646970;
+    margin-bottom: 25px;
+}
+
+:where(.image-ai-seo-dashboard) .statistics-loading {
+    text-align: center;
+    padding: 60px;
+    color: #646970;
+}
+
+:where(.image-ai-seo-dashboard) .statistics-loading .spinner {
+    float: none;
+    margin-right: 10px;
+}
+
+/* Stats Grid */
+:where(.image-ai-seo-dashboard) .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+:where(.image-ai-seo-dashboard) .stat-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: box-shadow 0.2s ease;
+}
+
+:where(.image-ai-seo-dashboard) .stat-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+:where(.image-ai-seo-dashboard) .stat-card .stat-icon {
+    font-size: 32px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+:where(.image-ai-seo-dashboard) .stat-card-primary .stat-icon {
+    background: #f0f6fc;
+    color: #2271b1;
+}
+
+:where(.image-ai-seo-dashboard) .stat-card-success .stat-icon {
+    background: #e7f5ea;
+    color: #00a32a;
+}
+
+:where(.image-ai-seo-dashboard) .stat-card-warning .stat-icon {
+    background: #fff3cd;
+    color: #856404;
+}
+
+:where(.image-ai-seo-dashboard) .stat-card-info .stat-icon {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+:where(.image-ai-seo-dashboard) .stat-card .stat-details {
+    display: flex;
+    flex-direction: column;
+}
+
+:where(.image-ai-seo-dashboard) .stat-card .stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1d2327;
+    line-height: 1.2;
+}
+
+:where(.image-ai-seo-dashboard) .stat-card .stat-label {
+    font-size: 13px;
+    color: #646970;
+    margin-top: 2px;
+}
+
+/* Optimization Progress Overview */
+:where(.image-ai-seo-dashboard) .optimization-progress-overview {
+    background: #f6f7f7;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+:where(.image-ai-seo-dashboard) .optimization-progress-overview h3 {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+:where(.image-ai-seo-dashboard) .progress-bar-container {
+    background: #e5e5e5;
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+}
+
+:where(.image-ai-seo-dashboard) .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2271b1, #00a32a);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+    min-width: 0;
+}
+
+:where(.image-ai-seo-dashboard) .progress-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #646970;
+}
+
+/* Stats Section */
+:where(.image-ai-seo-dashboard) .stats-section {
+    background: #f6f7f7;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+:where(.image-ai-seo-dashboard) .stats-section h3 {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Small Stats Grid */
+:where(.image-ai-seo-dashboard) .stats-grid-small {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+:where(.image-ai-seo-dashboard) .stat-card-small {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+}
+
+:where(.image-ai-seo-dashboard) .stat-value-small {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1d2327;
+}
+
+:where(.image-ai-seo-dashboard) .stat-label-small {
+    display: block;
+    font-size: 12px;
+    color: #646970;
+    margin-top: 5px;
+}
+
+/* Activity Chart */
+:where(.image-ai-seo-dashboard) .activity-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+    height: 200px;
+    padding: 20px 10px 10px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+}
+
+:where(.image-ai-seo-dashboard) .chart-bar-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+:where(.image-ai-seo-dashboard) .chart-bar {
+    width: 100%;
+    max-width: 40px;
+    background: linear-gradient(180deg, #2271b1, #0073aa);
+    border-radius: 4px 4px 0 0;
+    min-height: 4px;
+    transition: height 0.3s ease;
+    margin-top: auto;
+}
+
+/* G-03: zero-value bar renders as a flat, distinctly-colored floor tick
+   instead of a thin sliver with a floating "0". The value stays available in
+   the A-03 accessible data table. No inline height is set on these bars, so
+   this fixed-height rule applies without needing !important. */
+:where(.image-ai-seo-dashboard) .chart-bar.chart-bar-zero {
+    background: #f0f0f1;
+    opacity: 1;
+    height: 4px;
+}
+
+:where(.image-ai-seo-dashboard) .chart-bar-value {
+    position: absolute;
+    top: 0;
+    font-size: 11px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+:where(.image-ai-seo-dashboard) .chart-bar-label {
+    margin-top: 8px;
+    font-size: 11px;
+    color: #646970;
+}
+
+/* Action Breakdown */
+:where(.image-ai-seo-dashboard) .action-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+:where(.image-ai-seo-dashboard) .action-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+}
+
+:where(.image-ai-seo-dashboard) .action-label {
+    font-size: 13px;
+    color: #1d2327;
+}
+
+:where(.image-ai-seo-dashboard) .action-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2271b1;
+}
+
+/* Stats Actions */
+:where(.image-ai-seo-dashboard) .stats-actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+:where(.image-ai-seo-dashboard) .refresh-statistics .dashicons {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+:where(.image-ai-seo-dashboard) .refresh-statistics .dashicons.spin {
+    animation: image-ai-seo-spin 1s linear infinite;
+}
+
+@keyframes image-ai-seo-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 
