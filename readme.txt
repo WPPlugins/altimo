@@ -4,7 +4,7 @@ Tags: alt text, image seo, rename images, ai, accessibility
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 3.0.0
+Stable tag: 3.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,6 +98,11 @@ Uninstalling removes the plugin's own settings, credits, consent record and the 
 
 == Changelog ==
 
+= 3.0.1 =
+* The credit hint for a bulk run uses singular and plural correctly ("1 image will use 1 credit") and is translatable in every language.
+* The field in the attachment details is labelled "Altimo" instead of "AI SEO".
+* The notice about switching from Image AI SEO links the download page.
+
 = 3.0.0 =
 * Image AI SEO is now called Altimo – AI Image SEO. Your API key, settings, consent and history carry over.
 * File renames stay inside the uploads folder; a rename that would leave it is refused.
@@ -176,6 +181,9 @@ The purpose of the processing is to generate SEO-optimized titles, alt texts, de
 * Privacy policy: https://imageaiseo.com/privacy
 
 == Upgrade Notice ==
+
+= 3.0.1 =
+Small fixes: correct singular and plural in the bulk credit hint, the attachment field label and a linked download address in the switch notice.
 
 = 3.0.0 =
 Image AI SEO is now Altimo – AI Image SEO. Your API key and settings carry over. If the old Image AI SEO plugin is still installed, deactivate it, and delete it only once it is on version 2.3.3 or later.

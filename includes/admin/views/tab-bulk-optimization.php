@@ -33,15 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php if ( $stats['unoptimized'] > 0 ) : ?>
 				<div class="bulk-credit-info">
 					<?php
-					echo esc_html(
-						sprintf(
-							/* translators: 1: number of images to optimize, 2: number of credits that will be used (same as %1$d), 3: number of credits currently available */
-							__( 'Optimizing %1$d images will use %2$d credits. You have %3$d credits.', 'altimo' ),
-							$stats['unoptimized'],
-							$stats['unoptimized'],
-							$remaining_credits
-						)
-					);
+					echo esc_html( Image_AI_SEO_Credit_Handler::get_bulk_credit_info( $stats['unoptimized'], $remaining_credits ) );
 					?>
 					<?php if ( $remaining_credits < $stats['unoptimized'] ) : ?>
 						<br><span class="credit-insufficient">

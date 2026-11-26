@@ -1957,6 +1957,32 @@ jQuery(document).ready(function($) {
     }
 
     /**
+     * The credit hint above the bulk button, in the plural form of the site language.
+     * Same two sentences as Image_AI_SEO_Credit_Handler::get_bulk_credit_info(); each
+     * image uses one credit, so the image count is also the cost.
+     *
+     * @param {number} images  Images the run would optimize.
+     * @param {number} credits Remaining credit balance.
+     * @return {string} Translated hint, plain text.
+     */
+    function bulkCreditInfoText(images, credits) {
+        const { _n, sprintf } = wp.i18n;
+
+        const cost = sprintf(
+            /* translators: %1$d: number of images to optimize, also the number of credits the run uses (one per image). */
+            _n('Optimizing %1$d image will use %1$d credit.', 'Optimizing %1$d images will use %1$d credits.', images, 'altimo'),
+            images
+        );
+        const balance = sprintf(
+            /* translators: %d: number of credits currently available. */
+            _n('You have %d credit.', 'You have %d credits.', credits, 'altimo'),
+            credits
+        );
+
+        return cost + ' ' + balance;
+    }
+
+    /**
      * Hält den Credit-Hinweis ("Optimizing N images will use N credits ...") und den
      * Start-Button aktuell: Ohne offene Bilder wird der Button deaktiviert und als
      * "All images optimized" beschriftet, sonst zeigt der Hinweis die aktuelle Anzahl und
@@ -1995,10 +2021,7 @@ jQuery(document).ready(function($) {
             info = $('<div class="bulk-credit-info"></div>').insertBefore(button);
         }
 
-        info.empty().append(document.createTextNode(strings.bulkCreditInfo
-            .replace('%1$d', unoptimized)
-            .replace('%2$d', unoptimized)
-            .replace('%3$d', credits)));
+        info.empty().append(document.createTextNode(bulkCreditInfoText(unoptimized, credits)));
 
         if (credits < unoptimized) {
             info.append('<br>');

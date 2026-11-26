@@ -243,7 +243,7 @@ class Image_AI_SEO_Media_Columns {
 		);
 
 		$form_fields['image_ai_seo_optimize'] = array(
-			'label' => __( 'AI SEO', 'altimo' ),
+			'label' => __( 'Altimo', 'altimo' ),
 			'input' => 'html',
 			'html'  => $html,
 			'helps' => __( 'Optimize title, alt-text and filename using AI', 'altimo' ),

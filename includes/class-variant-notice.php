@@ -275,8 +275,27 @@ class Image_AI_SEO_Variant_Notice {
 			esc_attr( self::$altimo_paused ? 'notice-error' : 'notice-warning' )
 		);
 		foreach ( $messages as $message ) {
-			printf( '<p>%s</p>', esc_html( $message ) );
+			printf( '<p>%s</p>', wp_kses( self::link_download_url( esc_html( $message ) ), array( 'a' => array( 'href' => array() ) ) ) );
 		}
 		echo '</div>';
+	}
+
+	/**
+	 * Turns the download address in an escaped notice paragraph into a link.
+	 *
+	 * The messages stay plain text (the address fills a %s placeholder), so
+	 * translations keep working unchanged; only the rendered paragraph links it.
+	 *
+	 * @param string $escaped_message Message already passed through esc_html().
+	 * @return string Paragraph content with the address as an anchor.
+	 */
+	private static function link_download_url( $escaped_message ) {
+		$link = sprintf(
+			'<a href="%s">%s</a>',
+			esc_url( self::DOWNLOAD_URL ),
+			esc_html( self::DOWNLOAD_URL )
+		);
+
+		return str_replace( esc_html( self::DOWNLOAD_URL ), $link, $escaped_message );
 	}
 }

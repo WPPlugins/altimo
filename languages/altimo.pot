@@ -2,14 +2,14 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Altimo – AI Image SEO 3.0.0\n"
+"Project-Id-Version: Altimo – AI Image SEO 3.0.1\n"
 "Report-Msgid-Bugs-To: https://imageaiseo.com\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-26T01:12:31+00:00\n"
+"POT-Creation-Date: 2026-11-26T19:10:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: altimo\n"
@@ -111,14 +111,14 @@ msgid "Changes saved successfully."
 msgstr ""
 
 #: includes/admin/ajax/class-ajax-optimize.php:96
-#: includes/admin/class-admin-assets.php:82
+#: includes/admin/class-admin-assets.php:84
 #: includes/class-api-validator.php:17
 msgid "Please enter an API key."
 msgstr ""
 
 #: includes/admin/ajax/class-ajax-optimize.php:113
-#: includes/admin/class-admin-assets.php:83
-#: includes/admin/class-admin-assets.php:421
+#: includes/admin/class-admin-assets.php:85
+#: includes/admin/class-admin-assets.php:423
 #: includes/class-api-validator.php:60
 #: includes/class-image-optimizer.php:109
 #: includes/class-site-profile.php:286
@@ -159,56 +159,48 @@ msgstr ""
 msgid "The bulk optimization was stopped: data-processing consent has not been granted. Please grant consent on the License tab, then resume the run. No credits were used for the remaining images."
 msgstr ""
 
-#: includes/admin/class-admin-assets.php:80
-#: includes/admin/class-admin-assets.php:417
+#: includes/admin/class-admin-assets.php:82
+#: includes/admin/class-admin-assets.php:419
 msgid "Changes saved!"
 msgstr ""
 
-#: includes/admin/class-admin-assets.php:81
+#: includes/admin/class-admin-assets.php:83
 msgid "Error saving."
 msgstr ""
 
-#: includes/admin/class-admin-assets.php:84
+#: includes/admin/class-admin-assets.php:86
 #: includes/class-settings-handler.php:86
 #: includes/class-settings-handler.php:122
 msgid "Settings saved successfully."
 msgstr ""
 
-#: includes/admin/class-admin-assets.php:85
+#: includes/admin/class-admin-assets.php:87
 msgid "Error saving settings."
 msgstr ""
 
-#: includes/admin/class-admin-assets.php:86
-#: includes/admin/class-admin-assets.php:419
+#: includes/admin/class-admin-assets.php:88
+#: includes/admin/class-admin-assets.php:421
 #: includes/admin/views/dashboard-header.php:40
 msgid "Remaining credits"
 msgstr ""
 
-#: includes/admin/class-admin-assets.php:87
-#: includes/admin/class-admin-assets.php:422
+#: includes/admin/class-admin-assets.php:89
+#: includes/admin/class-admin-assets.php:424
 msgid "Optimizing..."
 msgstr ""
 
-#: includes/admin/class-admin-assets.php:88
-#: includes/admin/views/tab-bulk-optimization.php:59
+#: includes/admin/class-admin-assets.php:90
+#: includes/admin/views/tab-bulk-optimization.php:51
 msgid "Start Bulk Optimization"
 msgstr ""
 
-#: includes/admin/class-admin-assets.php:89
-#: includes/admin/views/tab-bulk-optimization.php:55
+#: includes/admin/class-admin-assets.php:91
+#: includes/admin/views/tab-bulk-optimization.php:47
 msgid "All images optimized"
 msgstr ""
 
-#. translators: 1: number of images to optimize, 2: number of credits that will be used (same as %1$d), 3: number of credits currently available. Replaced client-side.
-#. translators: 1: number of images to optimize, 2: number of credits that will be used (same as %1$d), 3: number of credits currently available
-#: includes/admin/class-admin-assets.php:91
-#: includes/admin/views/tab-bulk-optimization.php:39
-#, php-format
-msgid "Optimizing %1$d images will use %2$d credits. You have %3$d credits."
-msgstr ""
-
 #: includes/admin/class-admin-assets.php:92
-#: includes/admin/views/tab-bulk-optimization.php:48
+#: includes/admin/views/tab-bulk-optimization.php:40
 msgid "Warning: Not enough credits for all images!"
 msgstr ""
 
@@ -267,12 +259,12 @@ msgid "Cancel"
 msgstr ""
 
 #: includes/admin/class-admin-assets.php:120
-#: includes/admin/class-admin-assets.php:433
+#: includes/admin/class-admin-assets.php:435
 msgid "You have no credits remaining. Purchase more to continue optimizing your images."
 msgstr ""
 
 #: includes/admin/class-admin-assets.php:121
-#: includes/admin/class-admin-assets.php:436
+#: includes/admin/class-admin-assets.php:438
 #: includes/admin/class-admin-notices.php:379
 #: includes/admin/views/dashboard-header.php:59
 msgid "Buy more credits"
@@ -372,7 +364,7 @@ msgid "Are you sure you want to restore this change?"
 msgstr ""
 
 #: includes/admin/class-admin-assets.php:153
-#: includes/admin/class-admin-assets.php:427
+#: includes/admin/class-admin-assets.php:429
 msgid "Are you sure you want to regenerate this image? This will use 1 credit."
 msgstr ""
 
@@ -479,26 +471,27 @@ msgstr ""
 msgid "Keep my text"
 msgstr ""
 
-#: includes/admin/class-admin-assets.php:418
+#: includes/admin/class-admin-assets.php:420
 msgid "Error saving!"
 msgstr ""
 
-#: includes/admin/class-admin-assets.php:420
+#: includes/admin/class-admin-assets.php:422
 msgid "Error during optimization. Please try again."
 msgstr ""
 
-#: includes/admin/class-admin-assets.php:423
+#: includes/admin/class-admin-assets.php:425
 #: includes/admin/class-media-columns.php:241
 #: includes/admin/class-media-columns.php:463
 msgid "Optimize with AI"
 msgstr ""
 
-#: includes/admin/class-admin-assets.php:424
+#: includes/admin/class-admin-assets.php:426
 msgid "Optimized!"
 msgstr ""
 
 #: includes/admin/class-admin-menu.php:22
 #: includes/admin/class-admin-menu.php:23
+#: includes/admin/class-media-columns.php:246
 #: includes/admin/class-network-admin-menu.php:35
 #: includes/admin/views/dashboard-header.php:19
 msgid "Altimo"
@@ -702,10 +695,6 @@ msgstr ""
 
 #: includes/admin/class-media-columns.php:228
 msgid "Already optimized"
-msgstr ""
-
-#: includes/admin/class-media-columns.php:246
-msgid "AI SEO"
 msgstr ""
 
 #: includes/admin/class-media-columns.php:249
@@ -1287,6 +1276,24 @@ msgstr ""
 #: includes/class-consent-disclosure.php:249
 msgid "When AI suggestions for your Welcome settings are requested, the following data is transmitted:"
 msgstr ""
+
+#. translators: %1$d: number of images to optimize, also the number of credits the run uses (one per image).
+#: includes/class-credit-handler.php:112
+#: assets/js/admin-dashboard.js:1973
+#, php-format,js-format
+msgid "Optimizing %1$d image will use %1$d credit."
+msgid_plural "Optimizing %1$d images will use %1$d credits."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of credits currently available.
+#: includes/class-credit-handler.php:118
+#: assets/js/admin-dashboard.js:1978
+#, php-format,js-format
+msgid "You have %d credit."
+msgid_plural "You have %d credits."
+msgstr[0] ""
+msgstr[1] ""
 
 #: includes/class-file-handler.php:72
 msgid "No file could be determined for this image."

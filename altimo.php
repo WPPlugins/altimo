@@ -3,7 +3,7 @@
  * Plugin Name: Altimo – AI Image SEO
  * Plugin URI: https://imageaiseo.com
  * Description: AI-written titles, alt texts, descriptions and file names for your images, in 28 languages.
- * Version: 3.0.0
+ * Version: 3.0.1
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Author: Creative Skyline Ltda.
@@ -47,7 +47,7 @@ unset( $image_ai_seo_is_dormant );
 
 // Plugin-Konstanten definieren
 define( 'IMAGE_AI_SEO_EDITION', 'free' );
-define( 'IMAGE_AI_SEO_VERSION', '3.0.0' );
+define( 'IMAGE_AI_SEO_VERSION', '3.0.1' );
 define( 'IMAGE_AI_SEO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'IMAGE_AI_SEO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 

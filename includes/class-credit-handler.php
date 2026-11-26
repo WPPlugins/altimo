@@ -90,4 +90,35 @@ class Image_AI_SEO_Credit_Handler {
 
 		return '';
 	}
+
+	/**
+	 * The credit hint above the bulk optimization button.
+	 *
+	 * Each image uses one credit, so the image count is also the credit cost.
+	 * Both sentences follow the plural rules of the site language; up to 3.0.0
+	 * a single image read "1 images will use 1 credits". admin-dashboard.js
+	 * builds the same two sentences with wp.i18n when the counts change.
+	 *
+	 * @param int $images  Number of images the run would optimize.
+	 * @param int $credits Remaining credit balance.
+	 * @return string Translated hint, not escaped.
+	 */
+	public static function get_bulk_credit_info( $images, $credits ) {
+		$images  = (int) $images;
+		$credits = (int) $credits;
+
+		$cost = sprintf(
+			/* translators: %1$d: number of images to optimize, also the number of credits the run uses (one per image). */
+			_n( 'Optimizing %1$d image will use %1$d credit.', 'Optimizing %1$d images will use %1$d credits.', $images, 'altimo' ),
+			$images
+		);
+
+		$balance = sprintf(
+			/* translators: %d: number of credits currently available. */
+			_n( 'You have %d credit.', 'You have %d credits.', $credits, 'altimo' ),
+			$credits
+		);
+
+		return $cost . ' ' . $balance;
+	}
 }

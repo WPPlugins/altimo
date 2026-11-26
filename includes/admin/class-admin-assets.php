@@ -41,10 +41,12 @@ class Image_AI_SEO_Admin_Assets {
 		wp_enqueue_script(
 			'image-ai-seo-admin-dashboard',
 			IMAGE_AI_SEO_PLUGIN_URL . 'assets/js/admin-dashboard.js',
-			array( 'jquery' ),
+			array( 'jquery', 'wp-i18n' ),
 			IMAGE_AI_SEO_VERSION,
 			true
 		);
+		// The bulk credit hint uses wp.i18n._n(); its translations come with the language pack from translate.wordpress.org.
+		wp_set_script_translations( 'image-ai-seo-admin-dashboard', 'altimo' );
 
 		wp_localize_script(
 			'image-ai-seo-admin-dashboard',
@@ -87,8 +89,6 @@ class Image_AI_SEO_Admin_Assets {
 				'optimizing'               => __( 'Optimizing...', 'altimo' ),
 				'startBulkOptimization'    => __( 'Start Bulk Optimization', 'altimo' ),
 				'allImagesOptimized'       => __( 'All images optimized', 'altimo' ),
-				// translators: 1: number of images to optimize, 2: number of credits that will be used (same as %1$d), 3: number of credits currently available. Replaced client-side.
-				'bulkCreditInfo'           => __( 'Optimizing %1$d images will use %2$d credits. You have %3$d credits.', 'altimo' ),
 				'bulkCreditInsufficient'   => __( 'Warning: Not enough credits for all images!', 'altimo' ),
 				'noImagesToOptimize'       => __( 'No images to optimize.', 'altimo' ),
 				'bulkOptimizationError'    => __( 'Error during bulk optimization.', 'altimo' ),
@@ -353,10 +353,12 @@ class Image_AI_SEO_Admin_Assets {
 		wp_enqueue_script(
 			'image-ai-seo-admin-dashboard',
 			IMAGE_AI_SEO_PLUGIN_URL . 'assets/js/admin-dashboard.js',
-			array( 'jquery' ),
+			array( 'jquery', 'wp-i18n' ),
 			IMAGE_AI_SEO_VERSION,
 			true
 		);
+		// The bulk credit hint uses wp.i18n._n(); its translations come with the language pack from translate.wordpress.org.
+		wp_set_script_translations( 'image-ai-seo-admin-dashboard', 'altimo' );
 
 		$data            = self::get_dashboard_localized_data();
 		$media           = self::get_localized_script_data();
